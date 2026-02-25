@@ -1,0 +1,90 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
+export default function Hero() {
+    return (
+        <section style={{ height: '100vh', display: 'flex', alignItems: 'center', backgroundColor: 'var(--bg-main)', overflow: 'hidden' }}>
+            <div className="container" style={{ height: '85vh', display: 'flex', gap: '2rem' }}>
+
+                {/* Left Side: Editorial Text */}
+                <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ flex: '1', display: 'flex', flexDirection: 'column', justifyContent: 'center', zIndex: 10 }}
+                >
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.4, duration: 1 }}
+                        style={{ fontFamily: 'var(--font-logo)', letterSpacing: '0.4em', fontSize: '0.7rem', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '2rem' }}
+                    >
+                        Collection 2026 / 01
+                    </motion.p>
+
+                    <h1 style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', lineHeight: '0.95', marginBottom: '3rem', fontWeight: '800' }}>
+                        Elevate <br />
+                        <span style={{ fontStyle: 'italic', fontWeight: '400', fontFamily: 'var(--font-serif)', marginLeft: '1rem' }}>Artistic</span> <br />
+                        Living.
+                    </h1>
+
+                    <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: '100px' }}
+                        transition={{ delay: 0.8, duration: 1.5, ease: 'easeInOut' }}
+                        style={{ height: '1px', backgroundColor: 'var(--primary)', marginBottom: '3rem' }}
+                    />
+
+                    <p style={{ maxWidth: '360px', color: 'var(--text-soft)', fontSize: '0.95rem', lineHeight: '1.8' }}>
+                        A curated selection of the world's most sophisticated sanitaryware and bathroom fittings. Redefining high-end living in Bikaner.
+                    </p>
+                </motion.div>
+
+                {/* Right Side: Large Cinematic Visual */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ flex: '1.5', position: 'relative', overflow: 'hidden', backgroundColor: '#f5f5f5' }}
+                >
+                    {/* Main Visual Placeholder */}
+                    <div style={{
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '1rem',
+                        color: '#bbb',
+                        letterSpacing: '0.3em',
+                        textTransform: 'uppercase',
+                        fontWeight: '300'
+                    }}>
+                        Cinematic Exhibition Visual
+                    </div>
+
+                    {/* Floating Details Overlay */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1, duration: 1 }}
+                        style={{
+                            position: 'absolute',
+                            bottom: '3rem',
+                            right: '3rem',
+                            backgroundColor: 'white',
+                            padding: '2rem 3rem',
+                            boxShadow: '0 20px 50px rgba(0,0,0,0.05)',
+                            zIndex: 10
+                        }}
+                    >
+                        <p className="text-uppercase" style={{ fontSize: '0.6rem', letterSpacing: '0.2em', marginBottom: '0.5rem' }}>Limited Edition</p>
+                        <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.2rem', fontWeight: '600' }}>Italian Marble Basin</p>
+                    </motion.div>
+                </motion.div>
+
+            </div>
+        </section>
+    );
+}
