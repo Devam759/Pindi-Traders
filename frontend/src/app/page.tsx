@@ -66,15 +66,33 @@ export default function Home() {
               padding: '4rem 0'
             }}
           >
-            {BUSINESS_INFO.brands.map((brand) => (
-              <motion.span
-                key={brand}
+            {[
+              { src: '/hindware_logo.png', alt: 'Hindware' },
+              { src: '/cera_logo.png', alt: 'Cera' },
+              { src: '/essco_logo.png', alt: 'Essco' },
+              { src: '/plumber_logo.png', alt: 'Plumber' },
+              { src: '/l&k_logo.png', alt: 'L&K' }
+            ].map((logo) => (
+              <motion.div
+                key={logo.alt}
                 variants={fadeUp}
-                className="text-uppercase"
-                style={{ fontSize: '0.85rem', fontWeight: '500', color: '#888', letterSpacing: '0.2rem' }}
+                style={{
+                  width: '120px',
+                  height: '60px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  filter: 'grayscale(1) opacity(0.6)',
+                  transition: 'all 0.4s ease'
+                }}
+                whileHover={{ filter: 'grayscale(0) opacity(1)', scale: 1.05 }}
               >
-                {brand}
-              </motion.span>
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+                />
+              </motion.div>
             ))}
           </motion.div>
         </div>
