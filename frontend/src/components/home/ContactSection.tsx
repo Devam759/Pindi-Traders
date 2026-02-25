@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { BUSINESS_INFO } from '@/utils/constants';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 export default function ContactSection() {
     const [formData, setFormData] = useState({
@@ -12,18 +13,26 @@ export default function ContactSection() {
         message: ''
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
     const ACCESS_KEY = "9db2185c-ea0c-472c-a3e8-193292d64e6a";
 
     const handleFormSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!captchaToken) {
+            alert("Please complete the captcha to verify you are human.");
+            return;
+        }
+
         setStatus('loading');
 
         try {
             const submissionData = {
                 ...formData,
                 access_key: ACCESS_KEY,
-                subject: `New Inquiry from ${formData.name}`
+                subject: `New Inquiry from ${formData.name}`,
+                "h-captcha-response": captchaToken
             };
 
             const response = await fetch("https://api.web3forms.com/submit", {
@@ -40,6 +49,7 @@ export default function ContactSection() {
             if (result.success) {
                 setStatus('success');
                 setFormData({ name: '', phone: '', email: '', message: '' });
+                setCaptchaToken(null);
                 setTimeout(() => setStatus('idle'), 5000);
             } else {
                 setStatus('error');
@@ -162,6 +172,15 @@ export default function ContactSection() {
                                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                 style={{ width: '100%', background: 'transparent', border: 'none', borderBottom: '1px solid var(--border)', padding: '1rem 0', fontSize: '1rem', color: 'var(--text-main)', outline: 'none', minHeight: '120px', resize: 'none' }}
                             ></textarea>
+                        </div>
+
+                        <div style={{ marginBottom: '1.5rem' }}>
+                            <HCaptcha
+                                sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                                reCaptchaCompat={false}
+                                onVerify={(token) => setCaptchaToken(token)}
+                                onExpire={() => setCaptchaToken(null)}
+                            />
                         </div>
 
                         <motion.button
