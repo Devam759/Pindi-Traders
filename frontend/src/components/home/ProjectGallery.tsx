@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 
 export default function ProjectGallery() {
     const projects = [
-        { title: 'The Marble Suite', size: 'Full Width', cat: 'Bikaner Heights' },
-        { title: 'Modern Minimalism', size: 'Compact', cat: 'Private Villa' },
-        { title: 'Industrial Chic', size: 'Compact', cat: 'Luxury Penthouse' },
+        { title: 'The Marble Suite', size: 'Full Width', cat: 'Bikaner Heights', src: '/Hindware/img544.jpg' },
+        { title: 'Modern Minimalism', size: 'Compact', cat: 'Private Villa', src: '/Hindware/img2030.jpg' },
+        { title: 'Industrial Chic', size: 'Compact', cat: 'Luxury Penthouse', src: '/Hindware/img521.jpg' },
     ];
 
     return (
@@ -59,23 +59,17 @@ export default function ProjectGallery() {
                                 position: 'relative',
                                 transition: 'background-color 0.8s ease'
                             }}>
-                                <motion.div
+                                <motion.img
                                     whileHover={{ scale: 1.03 }}
                                     transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+                                    src={project.src}
+                                    alt={project.title}
                                     style={{
                                         width: '100%',
                                         height: '100%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        fontSize: '0.75rem',
-                                        color: '#ccc',
-                                        letterSpacing: '0.2rem',
-                                        textTransform: 'uppercase'
+                                        objectFit: 'cover'
                                     }}
-                                >
-                                    Gallery Visual: {project.title}
-                                </motion.div>
+                                />
 
                                 <div style={{
                                     position: 'absolute',

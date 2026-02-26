@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/common/Navbar";
+import ScrollToTop from "@/components/common/ScrollToTop";
+import PageTransition from "@/components/common/PageTransition";
 
 export const metadata: Metadata = {
   title: "Pindi Traders",
@@ -80,9 +82,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <ScrollToTop />
         <Navbar />
         <div style={{ paddingTop: '80px' }}>
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
         </div>
         <Analytics />
       </body>

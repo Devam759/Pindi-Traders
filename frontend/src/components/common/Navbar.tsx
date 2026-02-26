@@ -62,7 +62,7 @@ export default function Navbar() {
                     {navItems.map((item) => (
                         <Link
                             key={item}
-                            href={`#${item.toLowerCase()}`}
+                            href={item === 'Home' ? '/' : `/#${item.toLowerCase()}`}
                             onClick={() => setActiveItem(item)}
                             onMouseEnter={() => setHoveredItem(item)}
                             onMouseLeave={() => setHoveredItem(null)}
@@ -123,7 +123,7 @@ export default function Navbar() {
 
                 <div style={{ display: 'flex', gap: '3rem', justifyContent: 'flex-end', flex: 1 }}>
                     <Link
-                        href="#contact"
+                        href="/#contact"
                         className="text-uppercase"
                         onClick={() => setActiveItem('Inquiry')}
                         onMouseEnter={() => setHoveredItem('Inquiry')}

@@ -48,40 +48,18 @@ export default function Hero() {
                     transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
                     style={{ flex: '1.5', position: 'relative', overflow: 'hidden', backgroundColor: '#f5f5f5' }}
                 >
-                    {/* Main Visual Placeholder */}
-                    <div style={{
-                        width: '100%',
-                        height: '100%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '1rem',
-                        color: '#bbb',
-                        letterSpacing: '0.3em',
-                        textTransform: 'uppercase',
-                        fontWeight: '300'
-                    }}>
-                        Cinematic Exhibition Visual
-                    </div>
-
-                    {/* Floating Details Overlay */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1, duration: 1 }}
+                    {/* Main Visual Image */}
+                    <img
+                        src="/Hindware/img2202.jpg"
+                        alt="Cinematic Exhibition"
                         style={{
-                            position: 'absolute',
-                            bottom: '3rem',
-                            right: '3rem',
-                            backgroundColor: 'white',
-                            padding: '2rem 3rem',
-                            boxShadow: '0 20px 50px rgba(0,0,0,0.05)',
-                            zIndex: 10
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover'
                         }}
-                    >
-                        <p className="text-uppercase" style={{ fontSize: '0.6rem', letterSpacing: '0.2em', marginBottom: '0.5rem' }}>Limited Edition</p>
-                        <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.2rem', fontWeight: '600' }}>Italian Marble Basin</p>
-                    </motion.div>
+                    />
+
+
                 </motion.div>
 
             </div>

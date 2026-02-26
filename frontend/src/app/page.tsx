@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform, useMotionValueEvent, Variants } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
+import Link from 'next/link';
 import Hero from '@/components/home/Hero';
 import ProjectGallery from '@/components/home/ProjectGallery';
 import ContactSection from '@/components/home/ContactSection';
@@ -120,32 +121,33 @@ export default function Home() {
             zIndex: 2
           }}>
             {[
-              { title: 'The Platinum Suite', cat: 'Ceramics', y: cardY1 },
-              { title: 'Waterfall Flow', cat: 'Faucets', y: cardY2 },
-              { title: 'Obsidian Deep', cat: 'Sanitaryware', y: cardY3 }
+              { title: 'The Platinum Suite', cat: 'Ceramics', y: cardY1, src: '/Hindware/img2001.jpg', slug: 'ceramics' },
+              { title: 'Waterfall Flow', cat: 'Faucets', y: cardY2, src: '/Hindware/img981.jpg', slug: 'faucets' },
+              { title: 'Obsidian Deep', cat: 'Sanitaryware', y: cardY3, src: '/Hindware/img1141.jpg', slug: 'sanitaryware' }
             ].map((item, i) => (
-              <motion.div
-                key={i}
-                style={{ y: item.y, cursor: 'pointer' }}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                viewport={{ once: true }}
-              >
-                <div style={{ aspectRatio: '4/5', backgroundColor: '#f5f5f5', marginBottom: '2.5rem', overflow: 'hidden', position: 'relative', borderRadius: '2px' }}>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                    style={{ width: '100%', height: '100%', backgroundColor: 'var(--bg-main)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#bbb', textTransform: 'uppercase', letterSpacing: '0.3em', fontSize: '0.65rem', border: '1px solid rgba(0,0,0,0.03)' }}
-                  >
-                    Exhibition Visual
-                  </motion.div>
-                </div>
-                <div>
-                  <p className="accent-text" style={{ fontSize: '0.6rem', color: 'var(--accent)', marginBottom: '0.8rem', letterSpacing: '0.3em', textTransform: 'uppercase' }}>{item.cat}</p>
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: '400', fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--text-main)' }}>{item.title}</h3>
-                </div>
-              </motion.div>
+              <Link key={i} href={`/category/${item.slug}`} style={{ textDecoration: 'none' }}>
+                <motion.div
+                  style={{ y: item.y, cursor: 'pointer' }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+                  viewport={{ once: true }}
+                >
+                  <div style={{ aspectRatio: '4/5', backgroundColor: '#f5f5f5', marginBottom: '2.5rem', overflow: 'hidden', position: 'relative', borderRadius: '2px' }}>
+                    <motion.img
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+                      src={item.src}
+                      alt={item.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  </div>
+                  <div>
+                    <p className="accent-text" style={{ fontSize: '0.6rem', color: 'var(--accent)', marginBottom: '0.8rem', letterSpacing: '0.3em', textTransform: 'uppercase' }}>{item.cat}</p>
+                    <h3 style={{ fontSize: '1.5rem', fontWeight: '400', fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--text-main)' }}>{item.title}</h3>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
