@@ -92,7 +92,8 @@ export default function ContactSection() {
                         <div style={{ marginTop: '6rem', display: 'flex', gap: '4rem' }}>
                             {[
                                 { name: 'Instagram', url: BUSINESS_INFO.instagram },
-                                { name: 'Mail', url: `mailto:${BUSINESS_INFO.email}` }
+                                { name: 'Mail', url: `mailto:${BUSINESS_INFO.email}` },
+                                { name: 'Directions', url: BUSINESS_INFO.maps }
                             ].map(social => (
                                 <motion.a
                                     key={social.name}

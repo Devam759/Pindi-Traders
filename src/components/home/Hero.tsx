@@ -37,7 +37,7 @@ export default function Hero() {
                     />
 
                     <p style={{ maxWidth: '360px', color: 'var(--text-soft)', fontSize: '0.95rem', lineHeight: '1.8' }}>
-                        A curated selection of the world's most sophisticated sanitaryware and bathroom fittings. Redefining high-end living in Bikaner.
+                        A curated selection of the world's most sophisticated sanitaryware, fittings, and designer tiles. Redefining high-end living in Bikaner.
                     </p>
                 </motion.div>
 
