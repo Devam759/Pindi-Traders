@@ -4,9 +4,11 @@ import { motion } from 'framer-motion';
 
 export default function ProjectGallery() {
     const projects = [
-        { title: 'The Marble Suite', size: 'Full Width', cat: 'Bikaner Heights', src: '/Hindware/img544.jpg' },
-        { title: 'Modern Minimalism', size: 'Compact', cat: 'Private Villa', src: '/Hindware/img2030.jpg' },
-        { title: 'Industrial Chic', size: 'Compact', cat: 'Luxury Penthouse', src: '/Hindware/img521.jpg' },
+        { size: 'Full Width', src: '/Mains/img00137.jpg' },
+        { size: 'Compact', src: '/Mains/img00086.jpg' },
+        { size: 'Compact', src: '/Mains/img00027.jpg' },
+        { size: 'Compact', src: '/Mains/img00496.jpg' },
+        { size: 'Compact', src: '/Mains/img00591.jpg' },
     ];
 
     return (
@@ -19,7 +21,7 @@ export default function ProjectGallery() {
                         transition={{ duration: 1 }}
                         viewport={{ once: true }}
                     >
-                        <p className="accent-text" style={{ fontFamily: 'var(--font-logo)', letterSpacing: '0.3em', fontSize: '0.7rem', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Exhibition Labs</p>
+                        <p className="accent-text" style={{ fontFamily: 'var(--font-logo)', letterSpacing: '0.3em', fontSize: '0.7rem', textTransform: 'uppercase', marginBottom: '1.5rem' }}></p>
                         <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: '1.1' }}>Bespoke <br /><span style={{ fontStyle: 'italic', fontWeight: '400', fontFamily: 'var(--font-serif)' }}>Environments</span></h2>
                     </motion.div>
                     <motion.div
@@ -63,23 +65,13 @@ export default function ProjectGallery() {
                                     whileHover={{ scale: 1.03 }}
                                     transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                                     src={project.src}
-                                    alt={project.title}
+                                    alt="Gallery Image"
                                     style={{
                                         width: '100%',
                                         height: '100%',
                                         objectFit: 'cover'
                                     }}
                                 />
-
-                                <div style={{
-                                    position: 'absolute',
-                                    bottom: '3rem',
-                                    left: '3rem',
-                                    zIndex: 2
-                                }}>
-                                    <p className="text-uppercase" style={{ fontSize: '0.6rem', letterSpacing: '0.2rem', color: '#999', marginBottom: '0.5rem' }}>{project.cat}</p>
-                                    <h3 style={{ fontSize: '1.6rem', fontWeight: '400', fontFamily: 'var(--font-serif)' }}>{project.title}</h3>
-                                </div>
                             </div>
                         </motion.div>
                     ))}

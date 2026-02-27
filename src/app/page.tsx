@@ -147,15 +147,15 @@ export default function Home() {
             zIndex: 2
           }}>
             {[
-              { cat: 'Sanitaryware', y: cardY1, src: '/Hindware/img1141.jpg', slug: 'sanitary' },
-              { cat: 'Basins', y: cardY2, src: '/Hindware/img2001.jpg', slug: 'basins' },
-              { cat: 'Taps', y: cardY3, src: '/Hindware/img981.jpg', slug: 'taps' },
-              { cat: 'Showers', y: cardY1, src: '/Hindware/img1983.jpg', slug: 'showers' },
-              { cat: 'Water Storage', y: cardY2, src: '/Hindware/img1244.jpg', slug: 'water-storage' },
-              { cat: 'CPVC Pipes & Fittings', y: cardY3, src: '/Hindware/img571.jpg', slug: 'cpvc-pipes' },
-              { cat: 'Kitchen Sinks', y: cardY1, src: '/Hindware/img715.jpg', slug: 'kitchen-sinks' },
-              { cat: 'Tiles', y: cardY2, src: '/Hindware/img520.jpg', slug: 'tiles' },
-              { cat: 'Bathtubs', y: cardY3, src: '/Hindware/img544.jpg', slug: 'bathtubs' }
+              { cat: 'Sanitaryware', y: cardY1, src: '/Categories/Sanitaryware/img1141.jpg', slug: 'sanitary' },
+              { cat: 'Basins', y: cardY2, src: '/Categories/Basins/img00001.jpg', slug: 'basins' },
+              { cat: 'Taps', y: cardY3, src: '/Categories/Taps/img2001.jpg', slug: 'taps' },
+              { cat: 'Showers', y: cardY1, src: '/Categories/Showers/img00408.jpg', slug: 'showers' },
+              { cat: 'Water Storage', y: cardY2, src: '/Categories/Sanitaryware/img1244.jpg', slug: 'water-storage' },
+              { cat: 'Kitchen Sinks', y: cardY3, src: '/Categories/Showers/img715.jpg', slug: 'kitchen-sinks' },
+              { cat: 'Tiles', y: cardY1, src: '/Categories/Tiles/img991.jpg', slug: 'tiles' },
+              { cat: 'Bathtubs', y: cardY2, src: '/Categories/Bathtubs/img1092.jpg', slug: 'bathtubs' },
+              { cat: 'Accessories', y: cardY3, src: '/Categories/Accessories/img00453.jpg', slug: 'accessories' }
             ].map((item, i) => (
               <Link key={i} href={`/category/${item.slug}`} style={{ textDecoration: 'none' }}>
                 <motion.div

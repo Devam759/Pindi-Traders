@@ -16,118 +16,118 @@ const CATEGORY_DATA: Record<string, {
     'sanitary': {
         title: 'Sanitaryware',
         subtitle: 'Ceramic Excellence',
-        image: '/Hindware/img1141.jpg',
+        image: '/Categories/Sanitaryware/img1141.jpg',
         description: 'Transform your most private spaces into luxurious sanctuaries. Our sanitaryware range offers unparalleled comfort and aesthetic appeal, setting new standards in bathroom design.',
         brands: ['Hindware', 'Cera', 'Sona'],
         gallery: [
-            '/Hindware/img1983.jpg', '/Hindware/img1984.jpg', '/Hindware/img1985.jpg',
-            '/Hindware/img1986.jpg', '/Hindware/img1987.jpg', '/Hindware/img1244.jpg',
-            '/Hindware/img1141.jpg', '/Hindware/img1182.jpg', '/Hindware/img1183.jpg',
-            '/Hindware/img3045.jpg', '/Hindware/img1983.jpg', '/Hindware/img571.jpg'
+            '/Categories/Sanitaryware/img1141.jpg', '/Categories/Sanitaryware/img1183.jpg', '/Categories/Sanitaryware/img1244.jpg',
+            '/Categories/Sanitaryware/img544.jpg', '/Categories/Sanitaryware/img545.jpg', '/Categories/Sanitaryware/img875.jpg',
+            '/Categories/Sanitaryware/img00154.jpg', '/Categories/Sanitaryware/img00210.jpg', '/Categories/Sanitaryware/img00486.jpg',
+            '/Categories/Sanitaryware/img00592.jpg', '/Categories/Sanitaryware/img5390.jpg', '/Categories/Showers/img731.jpg'
         ]
     },
     'basins': {
         title: 'Premium Basins',
         subtitle: 'Sculpted Elegance',
-        image: '/Hindware/img2001.jpg',
+        image: '/Categories/Basins/img00001.jpg',
         description: 'Discover our collection of designer basins, from minimalist wall-hung units to statement tabletop pieces. Crafted with the finest ceramics and metallic finishes.',
         brands: ['Hindware', 'Cera'],
         gallery: [
-            '/Hindware/img2001.jpg', '/Hindware/img2030.jpg', '/Hindware/img1405.jpg',
-            '/Hindware/img1141.jpg', '/Hindware/img1182.jpg', '/Hindware/img1183.jpg',
-            '/Hindware/img1244.jpg', '/Hindware/img875.jpg', '/Hindware/img715.jpg',
-            '/Hindware/img520.jpg', '/Hindware/img521.jpg', '/Hindware/img544.jpg'
+            '/Categories/Basins/img00001.jpg', '/Categories/Basins/img00057.jpg', '/Categories/Basins/img00083.jpg',
+            '/Categories/Basins/img00132.jpg', '/Categories/Basins/img00209.jpg', '/Categories/Basins/img00212.jpg',
+            '/Categories/Basins/img00352.jpg', '/Categories/Basins/img00484.jpg', '/Categories/Basins/img00491.jpg',
+            '/Categories/Basins/img00532.jpg', '/Categories/Taps/img360.jpg', '/Categories/Taps/img600.jpg'
         ]
     },
     'taps': {
         title: 'Designer Taps',
         subtitle: 'Precision Flow',
-        image: '/Hindware/img981.jpg',
+        image: '/Categories/Taps/img2001.jpg',
         description: 'Experience precision engineering with our range of luxury taps and faucets. Combining water-saving technology with state-of-the-art Italian design.',
         brands: ['Essco', 'Plumber', 'Hindware'],
         gallery: [
-            '/Hindware/img981.jpg', '/Hindware/img983.jpg', '/Hindware/img984.jpg',
-            '/Hindware/img986.jpg', '/Hindware/img987.jpg', '/Hindware/img989.jpg',
-            '/Hindware/img991.jpg', '/Hindware/img875.jpg', '/Hindware/img715.jpg',
-            '/Hindware/img520.jpg', '/Hindware/img1244.jpg', '/Hindware/img2001.jpg'
+            '/Categories/Taps/img2001.jpg', '/Categories/Taps/img00083.jpg', '/Categories/Taps/img178.jpg',
+            '/Categories/Taps/img182.jpg', '/Categories/Taps/img1844.jpg', '/Categories/Taps/img360.jpg',
+            '/Categories/Taps/img600.jpg', '/Categories/Taps/img685.jpg', '/Categories/Showers/img981.jpg',
+            '/Categories/Showers/img984.jpg', '/Categories/Showers/img986.jpg', '/Categories/Showers/img987.jpg'
         ]
     },
     'showers': {
         title: 'Luxury Showers',
         subtitle: 'Sensory Immersion',
-        image: '/Hindware/img1983.jpg',
+        image: '/Categories/Showers/img00408.jpg',
         description: 'Redefine your bathing ritual with our sensory shower systems. Featuring rain-dance technology, body jets, and thermostatic controls for the ultimate sanctuary.',
         brands: ['Hindware', 'L&K', 'Plumber'],
         gallery: [
-            '/Hindware/img1983.jpg', '/Hindware/img1984.jpg', '/Hindware/img1985.jpg',
-            '/Hindware/img1986.jpg', '/Hindware/img1987.jpg', '/Hindware/img1244.jpg',
-            '/Hindware/img1141.jpg', '/Hindware/img571.jpg', '/Hindware/img520.jpg',
-            '/Hindware/img521.jpg', '/Hindware/img544.jpg', '/Hindware/img545.jpg'
+            '/Categories/Showers/img00408.jpg', '/Categories/Showers/img00425.jpg', '/Categories/Showers/img00427.jpg',
+            '/Categories/Showers/img1036.jpg', '/Categories/Showers/img1048.jpg', '/Categories/Showers/img1070.jpg',
+            '/Categories/Showers/img1137.jpg', '/Categories/Showers/img2202.jpg', '/Categories/Showers/img981.jpg',
+            '/Categories/Showers/img984.jpg', '/Categories/Showers/img986.jpg', '/Categories/Showers/img987.jpg'
         ]
     },
     'water-storage': {
         title: 'Water Storage',
         subtitle: 'Pure Conservation',
-        image: '/Hindware/img1983.jpg',
+        image: '/Categories/Sanitaryware/img1244.jpg',
         description: 'Reliable water storage solutions designed for longevity and hygiene. We provide the highest standard of tanks and storage systems for every household need.',
         brands: ['Ganga by Vectus', 'Sintex'],
         gallery: [
-            '/Hindware/img520.jpg', '/Hindware/img521.jpg', '/Hindware/img544.jpg',
-            '/Hindware/img545.jpg', '/Hindware/img571.jpg', '/Hindware/img579.jpg',
-            '/Hindware/img587.jpg', '/Hindware/img588.jpg', '/Hindware/img589.jpg',
-            '/Hindware/img590.jpg', '/Hindware/img591.jpg', '/Hindware/img592.jpg'
-        ]
-    },
-    'cpvc-pipes': {
-        title: 'CPVC Pipes & Fittings',
-        subtitle: 'Industrial Strength',
-        image: '/Hindware/img571.jpg',
-        description: 'High-performance piping solutions engineered for durability and efficiency. Our CPVC systems ensure reliable water distribution for generations.',
-        brands: ['Supreme', 'Prince'],
-        gallery: [
-            '/Hindware/img571.jpg', '/Hindware/img579.jpg', '/Hindware/img587.jpg',
-            '/Hindware/img588.jpg', '/Hindware/img589.jpg', '/Hindware/img590.jpg',
-            '/Hindware/img591.jpg', '/Hindware/img592.jpg', '/Hindware/img593.jpg',
-            '/Hindware/img594.jpg', '/Hindware/img587.jpg', '/Hindware/img588.jpg'
+            '/Categories/Sanitaryware/img1244.jpg', '/Categories/Sanitaryware/img1141.jpg', '/Categories/Sanitaryware/img1244.jpg',
+            '/Categories/Sanitaryware/img1244.jpg', '/Categories/Sanitaryware/img1141.jpg', '/Categories/Sanitaryware/img1244.jpg',
+            '/Categories/Sanitaryware/img1244.jpg', '/Categories/Sanitaryware/img1141.jpg', '/Categories/Sanitaryware/img1244.jpg',
+            '/Categories/Sanitaryware/img1244.jpg', '/Categories/Sanitaryware/img1141.jpg', '/Categories/Sanitaryware/img1244.jpg'
         ]
     },
     'kitchen-sinks': {
         title: 'Kitchen Sinks',
         subtitle: 'Culinary Sophistication',
-        image: '/Hindware/img715.jpg',
+        image: '/Categories/Showers/img715.jpg',
         description: 'Elevate your kitchen with our premium range of stainless steel sinks. Designed for heavy performance while maintaining a sleek, modern aesthetic.',
         brands: ['Nirali', 'Deepali'],
         gallery: [
-            '/Hindware/img715.jpg', '/Hindware/img731.jpg', '/Hindware/img875.jpg',
-            '/Hindware/img981.jpg', '/Hindware/img983.jpg', '/Hindware/img984.jpg',
-            '/Hindware/img986.jpg', '/Hindware/img987.jpg', '/Hindware/img989.jpg',
-            '/Hindware/img991.jpg', '/Hindware/img715.jpg', '/Hindware/img731.jpg'
+            '/Categories/Showers/img715.jpg', '/Categories/Showers/img731.jpg', '/Categories/Sanitaryware/img875.jpg',
+            '/Categories/Taps/img360.jpg', '/Categories/Taps/img600.jpg', '/Categories/Taps/img685.jpg',
+            '/Categories/Showers/img715.jpg', '/Categories/Showers/img731.jpg', '/Categories/Sanitaryware/img875.jpg',
+            '/Categories/Taps/img360.jpg', '/Categories/Taps/img600.jpg', '/Categories/Taps/img685.jpg'
         ]
     },
     'tiles': {
         title: 'Tiles',
         subtitle: 'Surface Artistry',
-        image: '/Hindware/img520.jpg',
+        image: '/Categories/Tiles/img991.jpg',
         description: 'Transform your floors and walls into artistic statements with our curated tiles. From minimalist textures to bold patterns, we offer surfaces for every vision.',
         brands: ['Orientbell', 'Suzlon Tiles'],
         gallery: [
-            '/Hindware/img520.jpg', '/Hindware/img521.jpg', '/Hindware/img544.jpg',
-            '/Hindware/img545.jpg', '/Hindware/img571.jpg', '/Hindware/img579.jpg',
-            '/Hindware/img587.jpg', '/Hindware/img588.jpg', '/Hindware/img589.jpg',
-            '/Hindware/img590.jpg', '/Hindware/img591.jpg', '/Hindware/img592.jpg'
+            '/Categories/Tiles/img991.jpg', '/Categories/Tiles/img983.jpg', '/Categories/Tiles/img991.jpg',
+            '/Categories/Tiles/img983.jpg', '/Categories/Tiles/img991.jpg', '/Categories/Tiles/img983.jpg',
+            '/Categories/Tiles/img991.jpg', '/Categories/Tiles/img983.jpg', '/Categories/Tiles/img991.jpg',
+            '/Categories/Tiles/img983.jpg', '/Categories/Tiles/img991.jpg', '/Categories/Tiles/img983.jpg'
         ]
     },
     'bathtubs': {
         title: 'Luxury Bathtubs',
         subtitle: 'Ultimate Relaxation',
-        image: '/Hindware/img544.jpg',
+        image: '/Categories/Bathtubs/img1092.jpg',
         description: 'Immerse yourself in pure luxury with our collection of freestanding and built-in bathtubs. Designed for maximum comfort and an exquisite spa-like experience at home.',
         brands: ['Hindware', 'Cera'],
         gallery: [
-            '/Hindware/img544.jpg', '/Hindware/img545.jpg', '/Hindware/img520.jpg',
-            '/Hindware/img521.jpg', '/Hindware/img2001.jpg', '/Hindware/img2030.jpg',
-            '/Hindware/img1405.jpg', '/Hindware/img1141.jpg', '/Hindware/img1182.jpg',
-            '/Hindware/img1983.jpg', '/Hindware/img1984.jpg', '/Hindware/img875.jpg'
+            '/Categories/Bathtubs/img1086.jpg', '/Categories/Bathtubs/img1087.jpg', '/Categories/Bathtubs/img1088.jpg',
+            '/Categories/Bathtubs/img1092.jpg', '/Categories/Bathtubs/img1094.jpg', '/Categories/Bathtubs/img1097.jpg',
+            '/Categories/Bathtubs/img1098.jpg', '/Categories/Bathtubs/img1115.jpg', '/Categories/Bathtubs/img1116.jpg',
+            '/Categories/Sanitaryware/img544.jpg', '/Categories/Sanitaryware/img545.jpg', '/Categories/Sanitaryware/img875.jpg'
+        ]
+    },
+    'accessories': {
+        title: 'Bathroom Accessories',
+        subtitle: 'Functional Elegance',
+        image: '/Categories/Accessories/img00453.jpg',
+        description: 'The final touches that complete your bathroom. From designer soap dispensers to premium towel racks, our accessories blend utility with sophisticated style.',
+        brands: ['Hindware', 'Cera', 'Plumber'],
+        gallery: [
+            '/Categories/Accessories/img00453.jpg', '/Categories/Accessories/img00468.jpg', '/Categories/Accessories/img00469.jpg',
+            '/Categories/Showers/img731.jpg', '/Categories/Taps/img685.jpg', '/Categories/Sanitaryware/img875.jpg',
+            '/Categories/Accessories/img00453.jpg', '/Categories/Accessories/img00468.jpg', '/Categories/Accessories/img00469.jpg',
+            '/Categories/Showers/img731.jpg', '/Categories/Taps/img685.jpg', '/Categories/Sanitaryware/img875.jpg'
         ]
     }
 };

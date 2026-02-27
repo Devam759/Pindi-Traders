@@ -50,7 +50,7 @@ export default function Hero() {
                 >
                     {/* Main Visual Image */}
                     <img
-                        src="/Hindware/img2202.jpg"
+                        src="/Mains/hero.jpg"
                         alt="Cinematic Exhibition"
                         style={{
                             width: '100%',

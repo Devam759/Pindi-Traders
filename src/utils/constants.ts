@@ -42,11 +42,6 @@ export const CATEGORY_DETAILS = {
         brands: ["Ganga by Vectus", "Sintex"],
         slug: "water-storage"
     },
-    "cpvc-pipes": {
-        name: "CPVC Pipes & Fittings",
-        brands: ["Supreme", "Prince"],
-        slug: "cpvc-pipes"
-    },
     "kitchen-sinks": {
         name: "Kitchen Sinks",
         brands: ["Nirali", "Deepali"],
@@ -61,6 +56,11 @@ export const CATEGORY_DETAILS = {
         name: "Bathtubs",
         brands: ["Hindware", "Cera"],
         slug: "bathtubs"
+    },
+    "accessories": {
+        name: "Accessories",
+        brands: ["Hindware", "Cera", "Plumber"],
+        slug: "accessories"
     }
 };
 
