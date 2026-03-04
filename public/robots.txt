@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://pinditraders.com/sitemap.xml

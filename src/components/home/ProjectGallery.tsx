@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 
 export default function ProjectGallery() {
     const projects = [
-        { size: 'Full Width', src: '/Mains/img00137.jpg' },
-        { size: 'Compact', src: '/Mains/img00086.jpg' },
-        { size: 'Compact', src: '/Mains/img00027.jpg' },
-        { size: 'Compact', src: '/Mains/img00496.jpg' },
-        { size: 'Compact', src: '/Mains/img00591.jpg' },
+        { size: 'Full Width', src: '/Mains/img00137.webp' },
+        { size: 'Compact', src: '/Mains/img00086.webp' },
+        { size: 'Compact', src: '/Mains/img00027.webp' },
+        { size: 'Compact', src: '/Mains/img00496.webp' },
+        { size: 'Compact', src: '/Mains/img00591.webp' },
     ];
 
     return (
@@ -65,7 +65,7 @@ export default function ProjectGallery() {
                                     whileHover={{ scale: 1.03 }}
                                     transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                                     src={project.src}
-                                    alt="Gallery Image"
+                                    alt={`Luxury Bathroom Design ${i + 1} - Pindi Traders Bikaner`}
                                     style={{
                                         width: '100%',
                                         height: '100%',

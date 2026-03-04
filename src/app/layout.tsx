@@ -6,8 +6,8 @@ import ScrollToTop from "@/components/common/ScrollToTop";
 import PageTransition from "@/components/common/PageTransition";
 
 export const metadata: Metadata = {
-  title: "Pindi Traders",
-  description: "Ranked as the best shop for sanitary in Bikaner, Pindi Traders offers a premium collection of luxury bathroom fittings, designer kitchen sinks, and water storage solutions. Your one-stop destination for Hindware, Cera, and more.",
+  title: "Pindi Traders | Luxury Sanitaryware & Bathroom Art",
+  description: "Bikaner's premier destination for luxury bathroom fittings and premium sanitaryware. Redefining living with curated collections from Hindware and Cera.",
   keywords: [
     "Best Shop for Sanitary in Bikaner",
     "Best Bathroom Fittings Shop",
@@ -72,6 +72,49 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  alternates: {
+    canonical: "https://pinditraders.com",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Pindi Traders",
+  "image": "https://pinditraders.com/logo_bg_remove.png",
+  "@id": "https://pinditraders.com",
+  "url": "https://pinditraders.com",
+  "telephone": "+91 93767 51264",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Main Rani Bazar Circle, Rani Bazar",
+    "addressLocality": "Bikaner",
+    "postalCode": "334001",
+    "addressRegion": "Rajasthan",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.0142,
+    "longitude": 73.3155
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "09:30",
+    "closes": "19:30"
+  },
+  "sameAs": [
+    "https://www.instagram.com/pinditraders_bkn/"
+  ],
+  "priceRange": "$$"
 };
 
 export default function RootLayout({
@@ -82,6 +125,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ScrollToTop />
         <Navbar />
         <div style={{ paddingTop: '80px' }}>

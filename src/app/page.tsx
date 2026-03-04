@@ -147,15 +147,15 @@ export default function Home() {
             zIndex: 2
           }}>
             {[
-              { cat: 'Sanitaryware', y: cardY1, src: '/Categories/Sanitaryware/img1141.jpg', slug: 'sanitary' },
-              { cat: 'Basins', y: cardY2, src: '/Categories/Basins/img00001.jpg', slug: 'basins' },
-              { cat: 'Taps', y: cardY3, src: '/Categories/Taps/img2001.jpg', slug: 'taps' },
-              { cat: 'Showers', y: cardY1, src: '/Categories/Showers/img00408.jpg', slug: 'showers' },
-              { cat: 'Water Storage', y: cardY2, src: '/Categories/Sanitaryware/img1244.jpg', slug: 'water-storage' },
-              { cat: 'Kitchen Sinks', y: cardY3, src: '/Categories/Showers/img715.jpg', slug: 'kitchen-sinks' },
+              { cat: 'Sanitaryware', y: cardY1, src: '/Categories/Sanitaryware/img1141.webp', slug: 'sanitary' },
+              { cat: 'Basins', y: cardY2, src: '/Categories/Basins/img00001.webp', slug: 'basins' },
+              { cat: 'Taps', y: cardY3, src: '/Categories/Taps/img2001.webp', slug: 'taps' },
+              { cat: 'Showers', y: cardY1, src: '/Categories/Showers/img00408.webp', slug: 'showers' },
+              { cat: 'Water Storage', y: cardY2, src: '/Categories/Sanitaryware/img1244.webp', slug: 'water-storage' },
+              { cat: 'Kitchen Sinks', y: cardY3, src: '/Categories/Showers/img715.webp', slug: 'kitchen-sinks' },
               { cat: 'Tiles', y: cardY1, src: '/Categories/Tiles/img991.jpg', slug: 'tiles' },
-              { cat: 'Bathtubs', y: cardY2, src: '/Categories/Bathtubs/img1092.jpg', slug: 'bathtubs' },
-              { cat: 'Accessories', y: cardY3, src: '/Categories/Accessories/img00453.jpg', slug: 'accessories' }
+              { cat: 'Bathtubs', y: cardY2, src: '/Categories/Bathtubs/img1092.webp', slug: 'bathtubs' },
+              { cat: 'Accessories', y: cardY3, src: '/Categories/Accessories/img00453.webp', slug: 'accessories' }
             ].map((item, i) => (
               <Link key={i} href={`/category/${item.slug}`} style={{ textDecoration: 'none' }}>
                 <motion.div
@@ -170,7 +170,7 @@ export default function Home() {
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                       src={item.src}
-                      alt={item.cat}
+                      alt={`${item.cat} - Luxury Collection at Pindi Traders Bikaner`}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   </div>

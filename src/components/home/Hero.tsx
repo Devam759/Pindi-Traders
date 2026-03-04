@@ -50,8 +50,8 @@ export default function Hero() {
                 >
                     {/* Main Visual Image */}
                     <img
-                        src="/Mains/hero.jpg"
-                        alt="Cinematic Exhibition"
+                        src="/Mains/hero.webp"
+                        alt="Pindi Traders Bikaner - Premium Luxury Bathroom Showroom and Sanitaryware"
                         style={{
                             width: '100%',
                             height: '100%',

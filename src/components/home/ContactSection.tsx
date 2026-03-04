@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { BUSINESS_INFO } from '@/utils/constants';
-import { useState } from 'react';
-import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { useState, useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function ContactSection() {
     const [formData, setFormData] = useState({
@@ -13,26 +13,31 @@ export default function ContactSection() {
         message: ''
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     const ACCESS_KEY = "9db2185c-ea0c-472c-a3e8-193292d64e6a";
 
     const handleFormSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setStatus('loading');
 
-        if (!captchaToken) {
-            alert("Please complete the captcha to verify you are human.");
+        // Execute the invisible reCAPTCHA automatically
+        recaptchaRef.current?.execute();
+    };
+
+    const handleReCAPTCHAVerify = async (token: string | null) => {
+        if (!token) {
+            alert("Captcha verification failed. Please try again.");
+            setStatus('idle');
             return;
         }
-
-        setStatus('loading');
 
         try {
             const submissionData = {
                 ...formData,
                 access_key: ACCESS_KEY,
                 subject: `New Inquiry from ${formData.name}`,
-                "h-captcha-response": captchaToken
+                "g-recaptcha-response": token
             };
 
             const response = await fetch("https://api.web3forms.com/submit", {
@@ -49,14 +54,16 @@ export default function ContactSection() {
             if (result.success) {
                 setStatus('success');
                 setFormData({ name: '', phone: '', email: '', message: '' });
-                setCaptchaToken(null);
+                recaptchaRef.current?.reset();
                 setTimeout(() => setStatus('idle'), 5000);
             } else {
                 setStatus('error');
+                recaptchaRef.current?.reset();
             }
         } catch (error) {
             console.error('Submission Error:', error);
             setStatus('error');
+            recaptchaRef.current?.reset();
         }
     };
 
@@ -163,7 +170,6 @@ export default function ContactSection() {
                             </div>
                         </div>
 
-
                         <div className="form-group-lux">
                             <label style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--text-soft)', display: 'block', marginBottom: '1rem' }}>Message</label>
                             <textarea
@@ -175,14 +181,12 @@ export default function ContactSection() {
                             ></textarea>
                         </div>
 
-                        <div style={{ marginBottom: '1.5rem' }}>
-                            <HCaptcha
-                                sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-                                reCaptchaCompat={false}
-                                onVerify={(token) => setCaptchaToken(token)}
-                                onExpire={() => setCaptchaToken(null)}
-                            />
-                        </div>
+                        <ReCAPTCHA
+                            ref={recaptchaRef}
+                            size="invisible"
+                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+                            onChange={handleReCAPTCHAVerify}
+                        />
 
                         <motion.button
                             type="submit"
