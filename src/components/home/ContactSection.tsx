@@ -2,8 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { BUSINESS_INFO } from '@/utils/constants';
-import { useState, useRef } from 'react';
-import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { useState } from 'react';
 
 export default function ContactSection() {
     const [formData, setFormData] = useState({
@@ -14,46 +13,18 @@ export default function ContactSection() {
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState<string>('');
-    const captchaRef = useRef<HCaptcha>(null);
-    const [isCaptchaLoaded, setIsCaptchaLoaded] = useState(false);
 
     const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
-    const HCAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || "";
 
     const handleFormSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
-        if (!isCaptchaLoaded) {
-            setStatus('error');
-            setErrorMessage("Security check is still loading. Please wait a moment and try again. If the problem persists, check your internet connection.");
-            return;
-        }
-
         setStatus('loading');
-
-        try {
-            // Execute the invisible hCaptcha automatically
-            captchaRef.current?.execute();
-        } catch (error) {
-            console.error('hCaptcha execution error:', error);
-            setStatus('error');
-            setErrorMessage('Could not initialize security check. Please refresh the page or check your ad-blocker.');
-        }
-    };
-
-    const handleCaptchaVerify = async (token: string | null) => {
-        if (!token) {
-            setStatus('error');
-            setErrorMessage("Captcha verification failed. Please try again.");
-            return;
-        }
 
         try {
             const submissionData = {
                 ...formData,
                 access_key: ACCESS_KEY,
                 subject: `New Inquiry from ${formData.name}`,
-                "h-captcha-response": token
             };
 
             const response = await fetch("https://api.web3forms.com/submit", {
@@ -71,18 +42,15 @@ export default function ContactSection() {
                 setStatus('success');
                 setFormData({ name: '', phone: '', email: '', message: '' });
                 setErrorMessage('');
-                captchaRef.current?.resetCaptcha();
                 setTimeout(() => setStatus('idle'), 5000);
             } else {
                 setStatus('error');
                 setErrorMessage(result.message || 'Submission failed. Please check your details and try again.');
-                captchaRef.current?.resetCaptcha();
             }
         } catch (error) {
             console.error('Submission Error:', error);
             setStatus('error');
             setErrorMessage('Network error. Please check your internet connection and try again.');
-            captchaRef.current?.resetCaptcha();
         }
     };
 
@@ -199,20 +167,6 @@ export default function ContactSection() {
                                 style={{ width: '100%', background: 'transparent', border: 'none', borderBottom: '1px solid var(--border)', padding: '1rem 0', fontSize: '1rem', color: 'var(--text-main)', outline: 'none', minHeight: '120px', resize: 'none' }}
                             ></textarea>
                         </div>
-
-                        <HCaptcha
-                            ref={captchaRef}
-                            size="invisible"
-                            sitekey={HCAPTCHA_SITE_KEY}
-                            onVerify={handleCaptchaVerify}
-                            onExpire={() => setStatus('idle')}
-                            onLoad={() => setIsCaptchaLoaded(true)}
-                            onError={(err) => {
-                                console.error("HCaptcha Error:", err);
-                                setErrorMessage("Security check (hCaptcha) failed to load. Please check your network.");
-                                setStatus('error');
-                            }}
-                        />
 
                         <motion.button
                             type="submit"

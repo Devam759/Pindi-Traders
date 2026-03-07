@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import ContactSection from '@/components/home/ContactSection';
 import { CATEGORY_DATA } from '@/utils/categories';
 
@@ -57,12 +58,15 @@ export default function CategoryContent() {
                         initial={{ opacity: 0, scale: 1.05 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                        style={{ aspectRatio: '4/5', overflow: 'hidden', backgroundColor: 'var(--bg-soft)' }}
+                        style={{ aspectRatio: '4/5', overflow: 'hidden', backgroundColor: 'var(--bg-soft)', position: 'relative' }}
                     >
-                        <img
+                        <Image
                             src={data.image}
                             alt={data.title}
-                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            style={{ objectFit: 'cover' }}
+                            priority
                         />
                     </motion.div>
                 </div>
@@ -100,13 +104,19 @@ export default function CategoryContent() {
                                     borderRadius: '2px'
                                 }}
                             >
-                                <motion.img
+                                <motion.div
                                     whileHover={{ scale: 1.05 }}
                                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                                    src={img}
-                                    alt={`${data.title} detail ${index + 1}`}
-                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                />
+                                    style={{ width: '100%', height: '100%', position: 'relative' }}
+                                >
+                                    <Image
+                                        src={img}
+                                        alt={`${data.title} detail ${index + 1}`}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        style={{ objectFit: 'cover' }}
+                                    />
+                                </motion.div>
                             </motion.div>
                         ))}
                     </div>

@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform, useMotionValueEvent, Variants } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Hero from '@/components/home/Hero';
 import ProjectGallery from '@/components/home/ProjectGallery';
 import ContactSection from '@/components/home/ContactSection';
@@ -91,14 +92,16 @@ export default function Home() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   filter: 'grayscale(1) opacity(0.5)',
-                  transition: 'all 0.4s ease'
+                  transition: 'all 0.4s ease',
+                  position: 'relative'
                 }}
                 whileHover={{ filter: 'grayscale(0) opacity(1)', scale: 1.1 }}
               >
-                <img
+                <Image
                   src={logo.src}
                   alt={logo.alt}
-                  style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+                  fill
+                  style={{ objectFit: 'contain', padding: '10px' }}
                 />
               </motion.div>
             ))}
@@ -166,12 +169,13 @@ export default function Home() {
                   viewport={{ once: true }}
                 >
                   <div style={{ aspectRatio: '4/5', backgroundColor: '#f5f5f5', marginBottom: '2.5rem', overflow: 'hidden', position: 'relative', borderRadius: '2px' }}>
-                    <motion.img
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+                    <Image
                       src={item.src}
                       alt={`${item.cat} - Luxury Collection at Pindi Traders Bikaner`}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      style={{ objectFit: 'cover' }}
+                      className="category-image"
                     />
                   </div>
                   <div>

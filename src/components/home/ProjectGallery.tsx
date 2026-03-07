@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function ProjectGallery() {
     const projects = [
@@ -61,17 +62,19 @@ export default function ProjectGallery() {
                                 position: 'relative',
                                 transition: 'background-color 0.8s ease'
                             }}>
-                                <motion.img
+                                <motion.div
                                     whileHover={{ scale: 1.03 }}
                                     transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                                    src={project.src}
-                                    alt={`Luxury Bathroom Design ${i + 1} - Pindi Traders Bikaner`}
-                                    style={{
-                                        width: '100%',
-                                        height: '100%',
-                                        objectFit: 'cover'
-                                    }}
-                                />
+                                    style={{ width: '100%', height: '100%', position: 'relative' }}
+                                >
+                                    <Image
+                                        src={project.src}
+                                        alt={`Luxury Bathroom Design ${i + 1} - Pindi Traders Bikaner`}
+                                        fill
+                                        sizes={project.size === 'Full Width' ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
+                                        style={{ objectFit: 'cover' }}
+                                    />
+                                </motion.div>
                             </div>
                         </motion.div>
                     ))}
