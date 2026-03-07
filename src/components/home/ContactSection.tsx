@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { BUSINESS_INFO } from '@/utils/constants';
 import { useState, useRef } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 export default function ContactSection() {
     const [formData, setFormData] = useState({
@@ -14,22 +14,23 @@ export default function ContactSection() {
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState<string>('');
-    const recaptchaRef = useRef<ReCAPTCHA>(null);
+    const captchaRef = useRef<HCaptcha>(null);
 
     const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
+    const HCAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || "";
 
     const handleFormSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus('loading');
 
-        // Execute the invisible reCAPTCHA automatically
-        recaptchaRef.current?.execute();
+        // Execute the invisible hCaptcha automatically
+        captchaRef.current?.execute();
     };
 
-    const handleReCAPTCHAVerify = async (token: string | null) => {
+    const handleCaptchaVerify = async (token: string | null) => {
         if (!token) {
-            alert("Captcha verification failed. Please try again.");
-            setStatus('idle');
+            setStatus('error');
+            setErrorMessage("Captcha verification failed. Please try again.");
             return;
         }
 
@@ -38,7 +39,7 @@ export default function ContactSection() {
                 ...formData,
                 access_key: ACCESS_KEY,
                 subject: `New Inquiry from ${formData.name}`,
-                "g-recaptcha-response": token
+                "h-captcha-response": token
             };
 
             const response = await fetch("https://api.web3forms.com/submit", {
@@ -56,18 +57,18 @@ export default function ContactSection() {
                 setStatus('success');
                 setFormData({ name: '', phone: '', email: '', message: '' });
                 setErrorMessage('');
-                recaptchaRef.current?.reset();
+                captchaRef.current?.resetCaptcha();
                 setTimeout(() => setStatus('idle'), 5000);
             } else {
                 setStatus('error');
                 setErrorMessage(result.message || 'Submission failed. Please check your details and try again.');
-                recaptchaRef.current?.reset();
+                captchaRef.current?.resetCaptcha();
             }
         } catch (error) {
             console.error('Submission Error:', error);
             setStatus('error');
             setErrorMessage('Network error. Please check your internet connection and try again.');
-            recaptchaRef.current?.reset();
+            captchaRef.current?.resetCaptcha();
         }
     };
 
@@ -185,11 +186,12 @@ export default function ContactSection() {
                             ></textarea>
                         </div>
 
-                        <ReCAPTCHA
-                            ref={recaptchaRef}
+                        <HCaptcha
+                            ref={captchaRef}
                             size="invisible"
-                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-                            onChange={handleReCAPTCHAVerify}
+                            sitekey={HCAPTCHA_SITE_KEY}
+                            onVerify={handleCaptchaVerify}
+                            onExpire={() => setStatus('idle')}
                         />
 
                         <motion.button
