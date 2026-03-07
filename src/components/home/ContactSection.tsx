@@ -15,16 +15,30 @@ export default function ContactSection() {
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState<string>('');
     const captchaRef = useRef<HCaptcha>(null);
+    const [isCaptchaLoaded, setIsCaptchaLoaded] = useState(false);
 
     const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
     const HCAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || "";
 
     const handleFormSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!isCaptchaLoaded) {
+            setStatus('error');
+            setErrorMessage("Security check is still loading. Please wait a moment and try again. If the problem persists, check your internet connection.");
+            return;
+        }
+
         setStatus('loading');
 
-        // Execute the invisible hCaptcha automatically
-        captchaRef.current?.execute();
+        try {
+            // Execute the invisible hCaptcha automatically
+            captchaRef.current?.execute();
+        } catch (error) {
+            console.error('hCaptcha execution error:', error);
+            setStatus('error');
+            setErrorMessage('Could not initialize security check. Please refresh the page or check your ad-blocker.');
+        }
     };
 
     const handleCaptchaVerify = async (token: string | null) => {
@@ -192,6 +206,12 @@ export default function ContactSection() {
                             sitekey={HCAPTCHA_SITE_KEY}
                             onVerify={handleCaptchaVerify}
                             onExpire={() => setStatus('idle')}
+                            onLoad={() => setIsCaptchaLoaded(true)}
+                            onError={(err) => {
+                                console.error("HCaptcha Error:", err);
+                                setErrorMessage("Security check (hCaptcha) failed to load. Please check your network.");
+                                setStatus('error');
+                            }}
                         />
 
                         <motion.button
