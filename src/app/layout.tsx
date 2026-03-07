@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     telephone: true,
   },
   icons: {
-    icon: "/logo_bg_remove.png",
+    icon: "/Logos/logo_bg_remove.png",
   },
   openGraph: {
     title: "Pindi Traders | Luxury Sanitaryware & Bathroom Art",
@@ -81,7 +81,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Pindi Traders",
-  "image": "https://pinditraders.com/logo_bg_remove.png",
+  "image": "https://pinditraders.com/Logos/logo_bg_remove.png",
   "@id": "https://pinditraders.com",
   "url": "https://pinditraders.com",
   "telephone": "+91 93767 51264",

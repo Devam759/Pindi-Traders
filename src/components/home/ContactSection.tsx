@@ -13,9 +13,10 @@ export default function ContactSection() {
         message: ''
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState<string>('');
     const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-    const ACCESS_KEY = "9db2185c-ea0c-472c-a3e8-193292d64e6a";
+    const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
 
     const handleFormSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -54,15 +55,18 @@ export default function ContactSection() {
             if (result.success) {
                 setStatus('success');
                 setFormData({ name: '', phone: '', email: '', message: '' });
+                setErrorMessage('');
                 recaptchaRef.current?.reset();
                 setTimeout(() => setStatus('idle'), 5000);
             } else {
                 setStatus('error');
+                setErrorMessage(result.message || 'Submission failed. Please check your details and try again.');
                 recaptchaRef.current?.reset();
             }
         } catch (error) {
             console.error('Submission Error:', error);
             setStatus('error');
+            setErrorMessage('Network error. Please check your internet connection and try again.');
             recaptchaRef.current?.reset();
         }
     };
@@ -184,7 +188,7 @@ export default function ContactSection() {
                         <ReCAPTCHA
                             ref={recaptchaRef}
                             size="invisible"
-                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
                             onChange={handleReCAPTCHAVerify}
                         />
 
@@ -225,7 +229,7 @@ export default function ContactSection() {
                                 animate={{ opacity: 1 }}
                                 style={{ textAlign: 'center', color: '#ff4b2b', fontSize: '0.9rem', fontWeight: '500' }}
                             >
-                                Something went wrong. Please try again later.
+                                {errorMessage || "Something went wrong. Please try again later."}
                             </motion.p>
                         )}
                     </form>
