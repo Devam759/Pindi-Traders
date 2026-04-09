@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import CategoryContent from './CategoryContent';
-import { CATEGORY_DATA } from '@/utils/categories';
+import CategoryContent from '@/components/sections/category/CategoryContent';
+import { CATEGORY_DATA } from '@/lib/categories';
 
 type Props = {
     params: Promise<{ category: string }>;

@@ -1,41 +1,32 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import Navbar from "@/components/common/Navbar";
-import ScrollToTop from "@/components/common/ScrollToTop";
-import PageTransition from "@/components/common/PageTransition";
+import Navbar from "@/components/layout/Navbar";
+import ScrollToTop from "@/components/layout/ScrollToTop";
+import PageTransition from "@/components/layout/PageTransition";
+import FloatingInquiry from "@/components/layout/FloatingInquiry";
 
 export const metadata: Metadata = {
-  title: "Pindi Traders | Luxury Sanitaryware & Bathroom Art",
-  description: "Bikaner's premier destination for luxury bathroom fittings and premium sanitaryware. Redefining living with curated collections from Hindware and Cera.",
+  title: "Pindi Traders | Best Price Bathroom Fitting & Sanitaryware in Bikaner",
+  description: "Bikaner's authorised dealer for Hindware, Cera, Sona & more. We offer the best market prices with the widest variety of bathroom fittings, tiles, and sanitaryware.",
   keywords: [
-    "Best Shop for Sanitary in Bikaner",
-    "Best Bathroom Fittings Shop",
-    "Sanitaryware Dealer Bikaner",
+    "Best Price Sanitary Bikaner",
+    "Wholesale Bathroom Fittings Bikaner",
+    "Hindware Authorised Dealer Bikaner",
+    "Cera Best Price Bikaner",
+    "Bathroom Fittings Variety Bikaner",
     "Pindi Traders Bikaner",
-    "Premium Bathroom Showroom",
-    "Hindware Best Shop Bikaner",
-    "Cera Authorized Dealer Bikaner",
-    "Luxury Sanitaryware Showroom",
-    "Best Kitchen Sinks Shop",
+    "Best Tiles Shop Bikaner",
+    "Sanitaryware Showroom Rani Bazar",
+    "Kitchen Sinks Best Price",
+    "Water Storage Tanks Bikaner",
+    "Sona Sanitaryware Bikaner",
     "Pindi Traders",
-    "Pindi Traders Bikaner",
-    "Pindi Traders Sanitaryware",
-    "Pindi Traders Bathroom Fittings",
-    "Pindi Traders Kitchen Sinks",
-    "Pindi Traders Water Storage",
-    "Pindi Traders Hindware",
-    "Pindi Traders Cera",
-    "Pindi Traders Luxury Sanitaryware",
-    "Pindi Traders Premium Bathroom Showroom",
-    "Pindi Traders Best Shop for Sanitary in Bikaner",
-    "Pindi Traders Best Bathroom Fittings Shop",
-    "Pindi Traders Sanitaryware Dealer Bikaner",
-    "Pindi Traders Premium Bathroom Showroom",
-    "Pindi Traders Hindware Best Shop Bikaner",
-    "Pindi Traders Cera Authorized Dealer Bikaner",
-    "Pindi Traders Luxury Sanitaryware Showroom",
-    "Pindi Traders Best Kitchen Sinks Shop"
+    "Pindi Traders Bikaner Price List",
+    "Bathroom Accessories Variety",
+    "Hindware Distributor Bikaner",
+    "Cera Tiles Bikaner",
+    "Affordable Luxury Bathroom Bikaner"
   ],
   authors: [{ name: "Pindi Traders" }],
   creator: "Pindi Traders",
@@ -49,8 +40,8 @@ export const metadata: Metadata = {
     icon: "/Logos/logo_bg_remove.png",
   },
   openGraph: {
-    title: "Pindi Traders | Luxury Sanitaryware & Bathroom Art",
-    description: "Redefining high-end living in Bikaner with curated bathroom artifacts.",
+    title: "Pindi Traders | Best Price & Widest Variety of Bathroom Brands",
+    description: "Authorised dealer for top brands like Hindware & Cera. Best prices guaranteed on bathroom fittings in Bikaner.",
     url: "https://pinditraders.com",
     siteName: "Pindi Traders",
     locale: "en_IN",
@@ -124,7 +115,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ position: 'relative' }}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -136,6 +127,7 @@ export default function RootLayout({
             {children}
           </PageTransition>
         </div>
+        <FloatingInquiry />
         <Analytics />
       </body>
     </html>

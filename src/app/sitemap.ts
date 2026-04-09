@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { CATEGORY_DATA } from '@/utils/categories';
+import { CATEGORY_DATA } from '@/lib/categories';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://pinditraders.com';

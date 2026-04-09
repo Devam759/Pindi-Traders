@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { BUSINESS_INFO } from '@/utils/constants';
+import { BUSINESS_INFO } from '@/lib/constants';
 import { useState } from 'react';
 
 export default function ContactSection() {
@@ -55,8 +55,8 @@ export default function ContactSection() {
     };
 
     return (
-        <section className="section" id="contact" style={{ padding: '6rem 0', backgroundColor: 'var(--bg-main)', transition: 'background-color 1s ease' }}>
-            <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'start' }}>
+        <section className="section" id="contact" style={{ padding: '6rem 0', backgroundColor: 'var(--bg-main)', transition: 'background-color 1s ease', scrollMarginTop: '100px' }}>
+            <div className="container contact-grid">
 
                 {/* Left Side: Contact Info */}
                 <motion.div
@@ -66,10 +66,7 @@ export default function ContactSection() {
                     viewport={{ once: true }}
                 >
                     <p className="accent-text" style={{ fontFamily: 'var(--font-logo)', letterSpacing: '0.4em', fontSize: '0.75rem', textTransform: 'uppercase', marginBottom: '2rem' }}>Contact</p>
-                    <h2 style={{ fontSize: '4rem', marginBottom: '3rem', lineHeight: '1', fontWeight: '800' }}>
-                        Let's Talk <br />
-                        <span style={{ fontStyle: 'italic', fontWeight: '400', fontFamily: 'var(--font-serif)', color: 'var(--accent)' }}>Design</span>.
-                    </h2>
+
 
                     <div style={{ marginTop: '2.5rem' }}>
                         <div style={{ marginBottom: '4rem' }}>
@@ -78,7 +75,7 @@ export default function ContactSection() {
                         </div>
 
                         <div style={{ marginBottom: '4rem' }}>
-                            <p style={{ color: 'var(--text-soft)', textTransform: 'uppercase', fontSize: '0.65rem', letterSpacing: '0.2em', marginBottom: '1.5rem' }}>For Inquiries contact</p>
+                            <p style={{ color: 'var(--text-soft)', textTransform: 'uppercase', fontSize: '0.65rem', letterSpacing: '0.2em', marginBottom: '1.5rem' }}>Mobile</p>
                             <p style={{ fontSize: '2.2rem', fontWeight: '500', fontFamily: 'var(--font-logo)', letterSpacing: '0.05em' }}>{BUSINESS_INFO.phone}</p>
                             <p style={{ marginTop: '0.8rem', color: 'var(--text-soft)', fontSize: '0.9rem' }}>{BUSINESS_INFO.hours}</p>
                         </div>
@@ -121,7 +118,7 @@ export default function ContactSection() {
                     style={{ position: 'relative' }}
                 >
                     <form onSubmit={handleFormSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem' }}>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1.2fr', gap: '3rem' }}>
+                        <div className="form-grid-lux">
                             <div className="form-group-lux">
                                 <label style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--text-soft)', display: 'block', marginBottom: '1rem' }}>Your Name</label>
                                 <input

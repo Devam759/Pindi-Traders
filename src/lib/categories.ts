@@ -8,9 +8,9 @@ export const CATEGORY_DATA: Record<string, {
 }> = {
     'sanitary': {
         title: 'Sanitaryware',
-        subtitle: 'Ceramic Excellence',
+        subtitle: 'Unmatched Variety & Price',
         image: '/Categories/Sanitaryware/img1141.webp',
-        description: 'Transform your most private spaces into luxurious sanctuaries. Our sanitaryware range offers unparalleled comfort and aesthetic appeal, setting new standards in bathroom design.',
+        description: 'Explore Bikaner\'s largest collection of sanitaryware at the absolute best market prices. From water closets to pedestals, we deal in top brands like Hindware and Cera, ensuring quality meets affordability.',
         brands: ['Hindware', 'Cera', 'Sona'],
         gallery: [
             '/Categories/Sanitaryware/img1141.webp', '/Categories/Sanitaryware/img1183.webp', '/Categories/Sanitaryware/img1244.webp',
@@ -20,10 +20,10 @@ export const CATEGORY_DATA: Record<string, {
         ]
     },
     'basins': {
-        title: 'Premium Basins',
-        subtitle: 'Sculpted Elegance',
+        title: 'Designer Basins',
+        subtitle: 'Top Brands, Better Prices',
         image: '/Categories/Basins/img00001.webp',
-        description: 'Discover our collection of designer basins, from minimalist wall-hung units to statement tabletop pieces. Crafted with the finest ceramics and metallic finishes.',
+        description: 'Find a basin for every budget and style. Our wide variety includes tabletop, wall-hung, and pedestal basins from the industry\'s most trusted brands, all at competitive Bikaner rates.',
         brands: ['Hindware', 'Cera'],
         gallery: [
             '/Categories/Basins/img00001.webp', '/Categories/Basins/img00057.webp', '/Categories/Basins/img00083.webp',
@@ -33,10 +33,10 @@ export const CATEGORY_DATA: Record<string, {
         ]
     },
     'taps': {
-        title: 'Designer Taps',
-        subtitle: 'Precision Flow',
+        title: 'Faucets & Taps',
+        subtitle: 'Endless Variety',
         image: '/Categories/Taps/img2001.webp',
-        description: 'Experience precision engineering with our range of luxury taps and faucets. Combining water-saving technology with state-of-the-art Italian design.',
+        description: 'Upgrade your bathroom with high-performance taps and faucets from Essco, Plumber, and Hindware. We offer the best prices on the widest selection of CP fittings in Rani Bazar.',
         brands: ['Essco', 'Plumber', 'Hindware'],
         gallery: [
             '/Categories/Taps/img2001.webp', '/Categories/Taps/img00083.webp', '/Categories/Taps/img178.webp',
@@ -98,10 +98,10 @@ export const CATEGORY_DATA: Record<string, {
         ]
     },
     'bathtubs': {
-        title: 'Luxury Bathtubs',
-        subtitle: 'Ultimate Relaxation',
+        title: 'Bathtubs',
+        subtitle: 'Relaxation for Every Budget',
         image: '/Categories/Bathtubs/img1092.webp',
-        description: 'Immerse yourself in pure luxury with our collection of freestanding and built-in bathtubs. Designed for maximum comfort and an exquisite spa-like experience at home.',
+        description: 'Make comfort affordable with our curated range of bathtubs. Whether you need a simple built-in or a premium freestanding tub, we offer the best varieties and prices in the region.',
         brands: ['Hindware', 'Cera'],
         gallery: [
             '/Categories/Bathtubs/img1086.webp', '/Categories/Bathtubs/img1087.webp', '/Categories/Bathtubs/img1088.webp',

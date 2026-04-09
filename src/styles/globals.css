@@ -27,7 +27,9 @@
   box-sizing: border-box;
 }
 
+html,
 body {
+  scroll-behavior: smooth;
   background-color: var(--bg-main);
   color: var(--text-main);
   font-family: var(--font-sans);
@@ -38,6 +40,24 @@ body {
   transition: background-color 1s cubic-bezier(0.16, 1, 0.3, 1),
     color 1s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+section {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .grid-2-col {
+    grid-template-columns: 1fr;
+  }
 }
 
 [data-theme='dark'] {
@@ -108,6 +128,15 @@ button {
 @media (max-width: 768px) {
   .container {
     padding: 0 1.5rem;
+  }
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .show-mobile {
+    display: none !important;
   }
 }
 
@@ -203,6 +232,73 @@ textarea.form-control {
   color: var(--text-soft);
 }
 
+/* Contact Section Responsive */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+  align-items: start;
+}
+
+.form-grid-lux {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .contact-grid {
+    gap: 4rem;
+  }
+  .form-grid-lux {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 6rem;
+  }
+  .form-grid-lux {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .contact-heading {
+    font-size: 3rem !important;
+  }
+}
+
+/* Shop Gallery Responsive */
+.shop-section {
+  padding: 2.5rem 0 12rem 0;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 6rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 1024px) {
+  .shop-grid {
+    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .shop-section {
+    padding: 0rem 0 6rem 0 !important;
+  }
+  .shop-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
 .reveal {
   animation: reveal 1s ease-out forwards;
 }
@@ -216,5 +312,17 @@ textarea.form-control {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.nav-logo-link {
+  justify-content: center;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .nav-logo-link {
+    justify-content: flex-start !important;
+    flex: 1 !important;
   }
 }

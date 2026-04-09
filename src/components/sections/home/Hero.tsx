@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function Hero() {
     return (
-        <section style={{ height: '100vh', display: 'flex', alignItems: 'center', backgroundColor: 'var(--bg-main)', overflow: 'hidden' }}>
+        <section id="home" style={{ height: '100vh', display: 'flex', alignItems: 'center', backgroundColor: 'var(--bg-main)', overflow: 'hidden', scrollMarginTop: '100px' }}>
             <div className="container" style={{ height: '85vh', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
 
                 {/* Left Side: Editorial Text */}

@@ -7,7 +7,7 @@ export const BUSINESS_INFO = {
         "Nirali", "Deepali", "Orientbell", "Suzlon Tiles"
     ],
     address: "Main Rani Bazar Circle, Rani Bazar, Bikaner, Rajasthan 334001",
-    phone: "+91 93767 51264",
+    phone: "+91 9376751264",
     email: "pinditrader@gmail.com",
     instagram: "https://www.instagram.com/pinditraders_bkn/",
     maps: "https://maps.app.goo.gl/32RmGgez3pcscxp56",

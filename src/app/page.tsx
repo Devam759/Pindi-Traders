@@ -4,10 +4,10 @@ import { motion, useScroll, useTransform, useMotionValueEvent, Variants } from '
 import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Hero from '@/components/home/Hero';
-import ProjectGallery from '@/components/home/ProjectGallery';
-import ContactSection from '@/components/home/ContactSection';
-import { BUSINESS_INFO } from '@/utils/constants';
+import Hero from '@/components/sections/home/Hero';
+import ProjectGallery from '@/components/sections/home/ProjectGallery';
+import ContactSection from '@/components/sections/home/ContactSection';
+import { BUSINESS_INFO } from '@/lib/constants';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -41,12 +41,21 @@ export default function Home() {
     }
   });
 
-  const cardY1 = useTransform(selectionProgress, [0, 1], [0, -120]);
-  const cardY2 = useTransform(selectionProgress, [0, 1], [0, -30]);
-  const cardY3 = useTransform(selectionProgress, [0, 1], [0, -180]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const cardY1 = useTransform(selectionProgress, [0, 1], isMobile ? [0, 0] : [0, -120]);
+  const cardY2 = useTransform(selectionProgress, [0, 1], isMobile ? [0, 0] : [0, -30]);
+  const cardY3 = useTransform(selectionProgress, [0, 1], isMobile ? [0, 0] : [0, -180]);
 
   return (
-    <main>
+    <main style={{ position: 'relative' }}>
       <Hero />
 
       {/* Brand Ethos Strip */}
@@ -59,10 +68,10 @@ export default function Home() {
             variants={stagger}
             style={{
               display: 'flex',
-              justifyContent: 'space-between',
+              justifyContent: 'center',
               alignItems: 'center',
               flexWrap: 'wrap',
-              gap: '3rem',
+              gap: '2rem',
               borderTop: '1px solid var(--border)',
               borderBottom: '1px solid var(--border)',
               padding: '6rem 0'
@@ -101,6 +110,7 @@ export default function Home() {
                   src={logo.src}
                   alt={logo.alt}
                   fill
+                  sizes="140px"
                   style={{ objectFit: 'contain', padding: '10px' }}
                 />
               </motion.div>
@@ -109,12 +119,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Collections Gallery */}
       <section
         id="shop"
         ref={selectionRef}
+        className="shop-section"
         style={{
-          padding: '2.5rem 0 12rem 0',
           backgroundColor: 'var(--bg-soft)',
           position: 'relative',
           zIndex: 1,
@@ -142,13 +151,7 @@ export default function Home() {
           </motion.div>
 
           {/* Grid items with Parallax */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '6rem',
-            position: 'relative',
-            zIndex: 2
-          }}>
+          <div className="shop-grid">
             {[
               { cat: 'Sanitaryware', y: cardY1, src: '/Categories/Sanitaryware/img1141.webp', slug: 'sanitary' },
               { cat: 'Basins', y: cardY2, src: '/Categories/Basins/img00001.webp', slug: 'basins' },
@@ -168,7 +171,7 @@ export default function Home() {
                   transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                   viewport={{ once: true }}
                 >
-                  <div style={{ aspectRatio: '4/5', backgroundColor: '#f5f5f5', marginBottom: '2.5rem', overflow: 'hidden', position: 'relative', borderRadius: '2px' }}>
+                  <div style={{ aspectRatio: '4/5', backgroundColor: '#f5f5f5', marginBottom: '1rem', overflow: 'hidden', position: 'relative', borderRadius: '2px' }}>
                     <Image
                       src={item.src}
                       alt={`${item.cat} - Luxury Collection at Pindi Traders Bikaner`}

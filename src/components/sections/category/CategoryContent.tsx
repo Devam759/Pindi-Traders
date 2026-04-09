@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import ContactSection from '@/components/home/ContactSection';
-import { CATEGORY_DATA } from '@/utils/categories';
+import ContactSection from '@/components/sections/home/ContactSection';
+import { CATEGORY_DATA } from '@/lib/categories';
 
 export default function CategoryContent() {
     const params = useParams();
@@ -24,7 +24,7 @@ export default function CategoryContent() {
         <main style={{ backgroundColor: 'var(--bg-main)', minHeight: '100vh', paddingTop: '10rem' }}>
             <div className="container">
                 {/* Hero Section of Category */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center', marginBottom: '12rem' }}>
+                <div className="grid-2-col" style={{ gap: '6rem', alignItems: 'center', marginBottom: '12rem' }}>
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
