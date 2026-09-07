@@ -7,7 +7,6 @@ import Image from 'next/image';
 import Hero from '@/components/sections/home/Hero';
 import ProjectGallery from '@/components/sections/home/ProjectGallery';
 import ContactSection from '@/components/sections/home/ContactSection';
-import { BUSINESS_INFO } from '@/lib/constants';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -142,7 +141,7 @@ export default function Home() {
             <h2 style={{
               fontSize: 'clamp(1.5rem, 3vw, 2rem)',
               fontWeight: '600',
-              color: '#000000',
+              color: 'var(--text-main)',
               letterSpacing: '0.15em',
               textTransform: 'uppercase'
             }}>
@@ -185,7 +184,7 @@ export default function Home() {
                     <h3 style={{
                       fontSize: '1rem',
                       fontWeight: '500',
-                      color: '#000000',
+                      color: 'var(--text-main)',
                       letterSpacing: '0.25em',
                       textTransform: 'uppercase'
                     }}>
@@ -226,7 +225,7 @@ export default function Home() {
             >
               <p className="text-uppercase" style={{ color: 'rgba(255,255,255,0.4)', letterSpacing: '0.4em', fontSize: '0.7rem', marginBottom: '3rem' }}>The Pindi Legacy</p>
               <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', lineHeight: '1.5', fontWeight: '300', fontFamily: 'var(--font-serif)' }}>
-                We don't just provide <span style={{ fontStyle: 'italic', fontWeight: '400' }}>fixtures</span>. <br />
+                We don&apos;t just provide <span style={{ fontStyle: 'italic', fontWeight: '400' }}>fixtures</span>. <br />
                 We curate the <span style={{ color: 'var(--accent)', fontWeight: '500' }}>landscape</span> of your everyday rituals.
               </h2>
               <div style={{ width: '40px', height: '1px', backgroundColor: 'var(--accent)', margin: '4rem auto' }}></div>

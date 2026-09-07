@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react';
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isDarkTheme, setIsDarkTheme] = useState(false);
-    const [activeItem, setActiveItem] = useState('Home');
     const [hoveredItem, setHoveredItem] = useState<string | null>(null);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -67,7 +66,6 @@ export default function Navbar() {
                             <Link
                                 key={item}
                                 href={item === 'Home' ? '/' : `/#${item.toLowerCase()}`}
-                                onClick={() => setActiveItem(item)}
                                 onMouseEnter={() => setHoveredItem(item)}
                                 onMouseLeave={() => setHoveredItem(null)}
                                 style={{ position: 'relative', padding: '0.6rem 0' }}
@@ -109,7 +107,7 @@ export default function Navbar() {
                     {/* Logo - Center */}
                     <Link
                         href="/"
-                        onClick={() => { setActiveItem('Home'); setIsOpen(false); }}
+                        onClick={() => { setIsOpen(false); }}
                         onMouseEnter={() => setHoveredItem('Logo')}
                         onMouseLeave={() => setHoveredItem(null)}
                         className="nav-logo-link"
@@ -144,7 +142,6 @@ export default function Navbar() {
                         <Link
                             href="/#contact"
                             className="text-uppercase"
-                            onClick={() => setActiveItem('Inquiry')}
                             onMouseEnter={() => setHoveredItem('Inquiry')}
                             onMouseLeave={() => setHoveredItem(null)}
                             style={{ fontSize: '0.7rem', fontWeight: '500', color: hoveredItem === 'Inquiry' ? 'var(--accent)' : 'var(--text-main)', letterSpacing: '0.2em', position: 'relative', padding: '0.6rem 0' }}

@@ -10,59 +10,12 @@ export const BUSINESS_INFO = {
     phone: "+91 9376751264",
     email: "pinditrader@gmail.com",
     instagram: "https://www.instagram.com/pinditraders_bkn/",
-    maps: "https://maps.app.goo.gl/32RmGgez3pcscxp56",
+    maps: "https://maps.app.goo.gl/YsMuX5XqXqk9NSfLA",
     rating: 4.8,
     reviewsCount: 16,
     hours: "9:30 AM - 7:30 PM",
 };
 
-export const CATEGORY_DETAILS = {
-    "sanitary": {
-        name: "Sanitaryware",
-        brands: ["Hindware", "Cera", "Sona"],
-        slug: "sanitary"
-    },
-    "basins": {
-        name: "Basins",
-        brands: ["Hindware", "Cera"],
-        slug: "basins"
-    },
-    "taps": {
-        name: "Taps",
-        brands: ["Essco", "Plumber"],
-        slug: "taps"
-    },
-    "showers": {
-        name: "Showers",
-        brands: ["Hindware", "L&K", "Plumber"],
-        slug: "showers"
-    },
-    "water-storage": {
-        name: "Water Storage",
-        brands: ["Ganga by Vectus", "Sintex"],
-        slug: "water-storage"
-    },
-    "kitchen-sinks": {
-        name: "Kitchen Sinks",
-        brands: ["Nirali", "Deepali"],
-        slug: "kitchen-sinks"
-    },
-    "tiles": {
-        name: "Tiles",
-        brands: ["Orientbell", "Suzlon Tiles"],
-        slug: "tiles"
-    },
-    "bathtubs": {
-        name: "Bathtubs",
-        brands: ["Hindware", "Cera"],
-        slug: "bathtubs"
-    },
-    "accessories": {
-        name: "Accessories",
-        brands: ["Hindware", "Cera", "Plumber"],
-        slug: "accessories"
-    }
-};
-
-export const CATEGORIES = Object.values(CATEGORY_DETAILS).map(c => c.name);
+/** Shared label used across Hero and category pages */
+export const COLLECTION_LABEL = "Collection 2026 / 01";
 

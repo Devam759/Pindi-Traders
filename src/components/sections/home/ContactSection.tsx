@@ -16,6 +16,10 @@ export default function ContactSection() {
 
     const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
 
+    if (!ACCESS_KEY && process.env.NODE_ENV === 'development') {
+        console.warn('[ContactSection] NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY is not set. Form submissions will fail.');
+    }
+
     const handleFormSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus('loading');

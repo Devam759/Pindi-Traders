@@ -22,7 +22,6 @@ export default function ProjectGallery() {
                         transition={{ duration: 1 }}
                         viewport={{ once: true }}
                     >
-                        <p className="accent-text" style={{ fontFamily: 'var(--font-logo)', letterSpacing: '0.3em', fontSize: '0.7rem', textTransform: 'uppercase', marginBottom: '1.5rem' }}></p>
                         <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: '1.1' }}>Global Standards, <br /><span style={{ fontStyle: 'italic', fontWeight: '400', fontFamily: 'var(--font-serif)' }}>Local Prices</span></h2>
                     </motion.div>
                     <motion.div

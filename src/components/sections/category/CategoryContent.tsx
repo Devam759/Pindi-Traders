@@ -1,24 +1,27 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import ContactSection from '@/components/sections/home/ContactSection';
 import { CATEGORY_DATA } from '@/lib/categories';
+import { COLLECTION_LABEL } from '@/lib/constants';
 
-export default function CategoryContent() {
-    const params = useParams();
-    const category = params.category as string;
-    const [data, setData] = useState<{ title: string, subtitle: string, image: string, description: string, brands: string[], gallery: string[] } | null>(null);
+type CategoryContentProps = {
+    category: string;
+};
 
-    useEffect(() => {
-        if (category && CATEGORY_DATA[category.toLowerCase()]) {
-            setData(CATEGORY_DATA[category.toLowerCase()]);
-        }
-    }, [category]);
+export default function CategoryContent({ category }: CategoryContentProps) {
+    const data = CATEGORY_DATA[category?.toLowerCase()] ?? null;
 
-    if (!data) return <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading...</div>;
+    if (!data) {
+        return (
+            <main style={{ height: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', backgroundColor: 'var(--bg-main)' }}>
+                <p style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.3em', color: 'var(--text-soft)' }}>404</p>
+                <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontFamily: 'var(--font-serif)', fontWeight: '400' }}>Category Not Found</h1>
+                <p style={{ color: 'var(--text-soft)', fontSize: '1rem' }}>The category you&apos;re looking for doesn&apos;t exist.</p>
+            </main>
+        );
+    }
 
     return (
         <main style={{ backgroundColor: 'var(--bg-main)', minHeight: '100vh', paddingTop: '10rem' }}>
@@ -31,7 +34,7 @@ export default function CategoryContent() {
                         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                     >
                         <p className="accent-text" style={{ letterSpacing: '0.4em', fontSize: '0.7rem', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '2rem' }}>
-                            Collection 2026 / 01
+                            {COLLECTION_LABEL}
                         </p>
                         <h1 style={{ fontSize: 'clamp(3.5rem, 6vw, 5.5rem)', lineHeight: '1', marginBottom: '3rem', fontWeight: '400', fontFamily: 'var(--font-serif)', fontStyle: 'italic' }}>
                             {data.title}

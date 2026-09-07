@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { COLLECTION_LABEL } from '@/lib/constants';
 
 export default function Hero() {
     return (
@@ -21,7 +22,7 @@ export default function Hero() {
                         transition={{ delay: 0.4, duration: 1 }}
                         style={{ fontFamily: 'var(--font-logo)', letterSpacing: '0.4em', fontSize: '0.7rem', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '2rem' }}
                     >
-                        Collection 2026 / 01
+                        {COLLECTION_LABEL}
                     </motion.p>
 
                     <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)', lineHeight: '0.95', marginBottom: '3rem', fontWeight: '800', letterSpacing: '-0.02em' }}>

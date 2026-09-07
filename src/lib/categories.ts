@@ -61,27 +61,25 @@ export const CATEGORY_DATA: Record<string, {
     'water-storage': {
         title: 'Water Storage',
         subtitle: 'Pure Conservation',
-        image: '/Categories/Sanitaryware/img1244.webp',
+        // TODO: Replace with actual water tank/storage product images when available
+        image: '/Categories/Sanitaryware/img1183.webp',
         description: 'Reliable water storage solutions designed for longevity and hygiene. We provide the highest standard of tanks and storage systems for every household need.',
         brands: ['Ganga by Vectus', 'Sintex'],
         gallery: [
-            '/Categories/Sanitaryware/img1244.webp', '/Categories/Sanitaryware/img1141.webp', '/Categories/Sanitaryware/img1244.webp',
-            '/Categories/Sanitaryware/img1244.webp', '/Categories/Sanitaryware/img1141.webp', '/Categories/Sanitaryware/img1244.webp',
-            '/Categories/Sanitaryware/img1244.webp', '/Categories/Sanitaryware/img1141.webp', '/Categories/Sanitaryware/img1244.webp',
-            '/Categories/Sanitaryware/img1244.webp', '/Categories/Sanitaryware/img1141.webp', '/Categories/Sanitaryware/img1244.webp'
+            '/Categories/Sanitaryware/img1183.webp', '/Categories/Sanitaryware/img1244.webp',
+            '/Categories/Sanitaryware/img5390.webp', '/Categories/Sanitaryware/img00592.webp'
         ]
     },
     'kitchen-sinks': {
         title: 'Kitchen Sinks',
         subtitle: 'Culinary Sophistication',
-        image: '/Categories/Showers/img715.webp',
+        // TODO: Replace with actual kitchen sink product images when available
+        image: '/Categories/Showers/img731.webp',
         description: 'Elevate your kitchen with our premium range of stainless steel sinks. Designed for heavy performance while maintaining a sleek, modern aesthetic.',
         brands: ['Nirali', 'Deepali'],
         gallery: [
-            '/Categories/Showers/img715.webp', '/Categories/Showers/img731.webp', '/Categories/Sanitaryware/img875.webp',
-            '/Categories/Taps/img360.webp', '/Categories/Taps/img600.webp', '/Categories/Taps/img685.webp',
-            '/Categories/Showers/img715.webp', '/Categories/Showers/img731.webp', '/Categories/Sanitaryware/img875.webp',
-            '/Categories/Taps/img360.webp', '/Categories/Taps/img600.webp', '/Categories/Taps/img685.webp'
+            '/Categories/Showers/img715.webp', '/Categories/Showers/img731.webp',
+            '/Categories/Sanitaryware/img875.webp', '/Categories/Taps/img685.webp'
         ]
     },
     'tiles': {
@@ -90,11 +88,10 @@ export const CATEGORY_DATA: Record<string, {
         image: '/Categories/Tiles/img991.jpg',
         description: 'Transform your floors and walls into artistic statements with our curated tiles. From minimalist textures to bold patterns, we offer surfaces for every vision.',
         brands: ['Orientbell', 'Suzlon Tiles'],
+        // TODO: Add more tile product images to public/Categories/Tiles/
         gallery: [
-            '/Categories/Tiles/img991.jpg', '/Categories/Tiles/img983.jpg', '/Categories/Tiles/img991.jpg',
-            '/Categories/Tiles/img983.jpg', '/Categories/Tiles/img991.jpg', '/Categories/Tiles/img983.jpg',
-            '/Categories/Tiles/img991.jpg', '/Categories/Tiles/img983.jpg', '/Categories/Tiles/img991.jpg',
-            '/Categories/Tiles/img983.jpg', '/Categories/Tiles/img991.jpg', '/Categories/Tiles/img983.jpg'
+            '/Categories/Tiles/img991.jpg',
+            '/Categories/Tiles/img983.jpg'
         ]
     },
     'bathtubs': {
@@ -117,8 +114,6 @@ export const CATEGORY_DATA: Record<string, {
         description: 'The final touches that complete your bathroom. From designer soap dispensers to premium towel racks, our accessories blend utility with sophisticated style.',
         brands: ['Hindware', 'Cera', 'Plumber'],
         gallery: [
-            '/Categories/Accessories/img00453.webp', '/Categories/Accessories/img00468.webp', '/Categories/Accessories/img00469.webp',
-            '/Categories/Showers/img731.webp', '/Categories/Taps/img685.webp', '/Categories/Sanitaryware/img875.webp',
             '/Categories/Accessories/img00453.webp', '/Categories/Accessories/img00468.webp', '/Categories/Accessories/img00469.webp',
             '/Categories/Showers/img731.webp', '/Categories/Taps/img685.webp', '/Categories/Sanitaryware/img875.webp'
         ]

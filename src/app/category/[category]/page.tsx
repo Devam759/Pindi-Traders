@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import CategoryContent from '@/components/sections/category/CategoryContent';
 import { CATEGORY_DATA } from '@/lib/categories';
 
@@ -28,10 +29,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             title,
             description,
             type: 'website',
+            images: [{ url: data.image }],
         },
     };
 }
 
-export default function CategoryPage() {
-    return <CategoryContent />;
+export default async function CategoryPage({ params }: Props) {
+    const { category } = await params;
+
+    if (!CATEGORY_DATA[category.toLowerCase()]) {
+        notFound();
+    }
+
+    return <CategoryContent category={category} />;
 }
