@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://pinditraders.com",
+    canonical: "/",
   },
 };
 
